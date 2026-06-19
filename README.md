@@ -45,5 +45,5 @@ Episodic result of individual sensors with `IDDQN` algorithm
 Episodic result of dual sensors with `IDDQN` algorithm
 <img width="1800" height="900" alt="dual_sensor_reward_curves_IDDQN" src="https://github.com/user-attachments/assets/9bf0bbf6-f3ec-4da9-a7ed-2e101375be71" />
 
-**Made with 
+**Made with ☕️ by Abhinandan**
 
