@@ -21,15 +21,15 @@ import random
 import numpy as np
 import pandas as pd
 from pathlib import Path
-from RLAgent import RLAgent
+from Utils.RLAgent import RLAgent
 import matplotlib.pyplot as plt
-from HyperparametersConfig import Config
-from ObstacleGrid2D import build_obstacle_map
-from TrainAgentDualSensorFusion import train_agent
-from SensorFusionEnv import SensorFusionUAVGridEnv, DualSensorFusionUAVGridEnv
-from ExpertWarmStart import astar_path, prefill_replay, behavior_clone
-from TrainAgentDualSensorFusion import greedy_rollout, path_length, count_corners
-from PlotDualSensorFusion import plot_paths, plot_reward_curves, plot_metric_bars
+from Utils.HyperparametersConfig import Config
+from Utils.ObstacleGrid2D import build_obstacle_map
+from TrainAgent.TrainAgentDualSensorFusion import train_agent
+from Utils.SensorFusionEnv import SensorFusionUAVGridEnv, DualSensorFusionUAVGridEnv
+from Utils.ExpertWarmStart import astar_path, prefill_replay, behavior_clone
+from TrainAgent.TrainAgentDualSensorFusion import greedy_rollout, path_length, count_corners
+from PlotFunction.PlotDualSensorFusion import plot_paths, plot_reward_curves, plot_metric_bars
 
 # reproducibility and device setting
 SEED = 42
