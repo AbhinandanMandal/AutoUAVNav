@@ -14,8 +14,8 @@ import numpy as np
 import pandas as pd 
 from pathlib import Path
 import matplotlib.pyplot as plt
-from hyperparametersConfig import Config
-from ObstalceGrid2D import build_obstacle_map
+from HyperparametersConfig import Config
+from ObstacleGrid2D import build_obstacle_map
 
 # Hyperparameter configuration and obstalces of 2D grid environment
 cfg=Config()
