@@ -23,8 +23,8 @@ import pandas as pd
 from pathlib import Path
 from RLAgent import RLAgent
 import matplotlib.pyplot as plt
-from hyperparametersConfig import Config
-from ObstalceGrid2D import build_obstacle_map
+from HyperparametersConfig import Config
+from ObstacleGrid2D import build_obstacle_map
 from TrainAgentDualSensorFusion import train_agent
 from SensorFusionEnv import SensorFusionUAVGridEnv, DualSensorFusionUAVGridEnv
 from ExpertWarmStart import astar_path, prefill_replay, behavior_clone
