@@ -22,15 +22,15 @@ import random
 import numpy as np
 import pandas as pd
 from pathlib import Path
-from RLAgent import RLAgent
+from Utils.RLAgent import RLAgent
 import matplotlib.pyplot as plt
-from HyperparametersConfig import Config
-from ObstacleGrid2D import build_obstacle_map
-from TrainAgentDualSensorFusion import train_agent
-from SensorFusionEnv import SensorFusionUAVGridEnv, IndividualSensorUAVGridEnv
-from ExpertWarmStart import astar_path, prefill_replay, behavior_clone
-from TrainAgentDualSensorFusion import greedy_rollout, path_length, count_corners
-from PlotIndividualSensorFusion import plot_paths, plot_reward_curves, plot_metric_bars
+from Utils.HyperparametersConfig import Config
+from Utils.ObstacleGrid2D import build_obstacle_map
+from TrainAgent.TrainAgentDualSensorFusion import train_agent
+from Utils.SensorFusionEnv import SensorFusionUAVGridEnv, IndividualSensorUAVGridEnv
+from Utils.ExpertWarmStart import astar_path, prefill_replay, behavior_clone
+from TrainAgent.TrainAgentIndividualSensorFusion import greedy_rollout, path_length, count_corners
+from PlotFunction.PlotIndividualSensorFusion import plot_paths, plot_reward_curves, plot_metric_bars
 
 # reproducibility and device setting
 SEED = 42
@@ -56,8 +56,10 @@ EPISODE_REWARD_CSV_PATH = Path(
 PLOT_PATH = Path("IndividualSensorFusionResults/dual_sensor_paths_DQN.png")
 REWARD_PLOT_PATH = Path(
     "IndividualSensorFusionResults/dual_sensor_reward_curves_DQN.png")
-BAR_PATH = Path("IndividualSensorFusionResults/dual_sensor_metric_bars_DQN.png")
-CHECKPOINT_DIR = Path("IndividualSensorFusionResults/dual_sensor_rl_checkpoints_DQN")
+BAR_PATH = Path(
+    "IndividualSensorFusionResults/dual_sensor_metric_bars_DQN.png")
+CHECKPOINT_DIR = Path(
+    "IndividualSensorFusionResults/dual_sensor_rl_checkpoints_DQN")
 CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 # A comprehensive environment for UAV navigation
