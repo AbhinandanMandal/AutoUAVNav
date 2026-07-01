@@ -3,7 +3,7 @@
 2D obstacle grid map for UAV navigation.
 Idea taken from https://ieeexplore.ieee.org/document/10475692  
 """
-from hyperparametersConfig import Config
+from HyperparametersConfig import Config
 cfg=Config()
 
 # Obstacle for the 2D grid
