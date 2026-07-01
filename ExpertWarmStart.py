@@ -12,8 +12,8 @@ import heapq
 import torch
 import torch.nn as nn
 import numpy as np
-from hyperparametersConfig import Config
-from ObstalceGrid2D import build_obstacle_map
+from HyperparametersConfig import Config
+from ObstacleGrid2D import build_obstacle_map
 from SensorFusionEnv import DualSensorFusionUAVGridEnv
 
 cfg = Config()
