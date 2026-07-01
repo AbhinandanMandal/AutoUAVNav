@@ -9,9 +9,9 @@ For this project, three fundamental sensors `LiDAR`, `Camera` and `IMU`have been
 Using the above three sensors, the following analysis has been done extensively on multiple scenarios and conditions. 
 
 Following testcases were running using four algorithm,
-1. DQN
-2. Double DQN
-3. Dueling DQN
+1. [DQN](https://medium.com/@qempsil0914/deep-q-learning-part2-double-deep-q-network-double-dqn-b8fc9212bbb2)
+2. [Double DQN](https://medium.com/@qempsil0914/deep-q-learning-part2-double-deep-q-network-double-dqn-b8fc9212bbb2)
+3. [Dueling DQN](https://medium.com/@sainijagjit/understanding-dueling-dqn-a-deep-dive-into-reinforcement-learning-575f6fe4328c)
 4. IDDQN (propsoed in the following research paper)
 
    
