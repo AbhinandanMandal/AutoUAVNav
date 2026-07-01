@@ -270,3 +270,51 @@ class DualSensorFusionUAVGridEnv(SensorFusionUAVGridEnv):
         if self.has_sensor("camera") and camera_blocked:
             cost += self.cfg.camera_warning_energy_cost
         return float(cost)
+
+
+class IndividualSensorUAVGridEnv(SensorFusionUAVGridEnv):
+    VALID_SENSORS = {"lidar", "camera", "imu"}
+
+    def __init__(self, config, obstacles, active_sensors, mode_name="sensor mode"):
+        self.active_sensors = tuple(active_sensors)
+        self.mode_name = mode_name
+        invalid = set(self.active_sensors) - self.VALID_SENSORS
+        if invalid:
+            raise ValueError(f"Unknown sensors: {sorted(invalid)}")
+        super().__init__(config, obstacles)
+        self.state_size = self._state().shape[0]
+
+    def has_sensor(self, name):
+        return name in self.active_sensors
+
+    def _state(self):
+        max_dist = math.sqrt(2) * self.cfg.grid_size
+        base = np.array([
+            self.pos[0] / self.cfg.grid_size,
+            self.pos[1] / self.cfg.grid_size,
+            self._target_distance() / max_dist,
+            self.energy / self.cfg.initial_energy,
+        ], dtype=np.float32)
+        features = [base]
+        if self.has_sensor("lidar"):
+            features.append(self._lidar_scan())
+        if self.has_sensor("camera"):
+            features.append(self._camera_flags())
+        if self.has_sensor("imu"):
+            features.append(self._imu_features())
+        return np.concatenate(features).astype(np.float32)
+
+    def _energy_cost(self, action, camera_blocked):
+        move = self.ACTIONS[action]
+        cost = self.cfg.base_energy_cost
+        if abs(move[0]) + abs(move[1]) == 2:
+            cost += self.cfg.diagonal_energy_cost
+        if self.has_sensor("imu") and self._motion_kind(action) == "corner":
+            cost += self.cfg.corner_energy_cost
+        if self.has_sensor("lidar"):
+            nearby_obstacles = self._lidar_scan().reshape(4, 3)[:, 0].sum()
+            cost += self.cfg.obstacle_risk_energy_cost * nearby_obstacles
+        if self.has_sensor("camera") and camera_blocked:
+            cost += self.cfg.camera_warning_energy_cost
+        return float(cost)
+
