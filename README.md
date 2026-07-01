@@ -19,21 +19,40 @@ The following project has been divided into some set of `individual` and `dual` 
 3. Dueling DQN
 4. IDDQN *(propsoed in the following research paper)*
 
+```text
+AutoUAVNav/
+│
+├── PlotFunction/
+│   ├── PlotDualSensorFusion.py
+│   └── PlotIndividualSensorFusion.py
+│
+├── QNetwork/
+│   ├── DeepQNetwork.py
+│   └── DuelingQNetwork.py
+│
+├── TrainAgent/
+│   ├── TrainAgentDualSensorFusion.py
+│   └── TrainAgentIndividualSensorFusion.py
+│
+├── Utils/
+│   ├── ExpertWarmStart.py
+│   ├── HyperparametersConfig.py
+│   ├── ObstacleGrid2D.py
+│   ├── ReplayBuffer.py
+│   ├── RLAgent.py
+│   └── SensorFusionEnv.py
+│
+├── DualSensorComparisonDQN.py
+├── DualSensorComparisonDuelDQN.py
+├── DualSensorComparisonDDQN.py
+├── DualSensorComparisonIDDQN.py
+│
+├── IndividualSensorComparisonDQN.py
+├── IndividualSensorComparisonDuelDQN.py
+├── IndividualSensorComparisonDDQN.py
+└── IndividualSensorComparisonIDDQN.py
 ```
-AutoUAVNav
-    |
-    |--- sensorfusion_uav_navigation.ipynb          # Comparison of four mentioned rl algorithm with all three sensors
-    |--- individual_sensor_comparison_DQN.ipynb     # DQN algorithm comparison with individual sensors
-    |--- individual_sensor_comparison_DDQN.ipynb    # Double DQN algorithm comparison with individual sensors
-    |--- individual_sensor_comparison_DuelDQN.ipynb # Dueling DQN algorithm comparison with individual sensors
-    |--- individual_sensor_comparison_IDDQN.ipynb   # IDQN algorithm comparison with individual sensors
-    |--- dual_sensor_comparison_DQN.ipynb           # DQN algorithm comparison with dual sensors
-    |--- dual_sensor_comparison_DDQN.ipynb          # DDQN algorithm comparison with dual sensors
-    |--- dual_sensor_comparison_DuelDQN.ipynb       # Dueling DQN algorithm comparison with dual sensors
-    |--- dual_sensor_comparison_IDDQN.ipynb         # IDQN algorithm comparison with dual sensors
-    |--- hyperparameters.py                         # some hyperparameters
 
-```
 
 In the following `individual` sensor represents only `LiDAR`, `Camera`, `IMU`. And `dual` sensors represents `LiDAR + IMU`, `Camera + IMU`, `LiDAR + Camera`, `LiDAR + Camera + IMU`.
 
