@@ -4,21 +4,18 @@ The initial idea was taken from paper [Path Planning of Autonomous Mobile Robot 
 
 <img width="960" height="718" alt="Spying_quadcopter_(cropped)" src="https://github.com/user-attachments/assets/fff83187-131e-4a3a-b7d9-220f78e0c295" />
 
-## Sensors
-For this project, three fundamental sensors are taking into consideration,
-1. LiDAR
-2. Camera
-3. IMU
-   
+## Sensors & Algorithm
+For this project, three fundamental sensors `LiDAR`, `Camera` and `IMU`have been taken into consideration,   
 Using the above three sensors, the following analysis has been done extensively on multiple scenarios and conditions. 
 
-## Project Structure
-The following project has been divided into some set of `individual` and `dual` sensor analysis on fours reinforcement learning algorithm,
+Following testcases were running using four algorithm,
 1. DQN
 2. Double DQN
 3. Dueling DQN
-4. IDDQN *(propsoed in the following research paper)*
+4. IDDQN (propsoed in the following research paper)
 
+   
+## Project Structure
 ```text
 AutoUAVNav/
 │
