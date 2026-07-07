@@ -4,9 +4,11 @@
 Idea taken from https://ieeexplore.ieee.org/document/10475692  
 """
 from Utils.HyperparametersConfig import Config
-cfg=Config()
+cfg = Config()
 
 # Obstacle for the 2D grid
+
+
 def add_rect(cells, x0, x1, y0, y1):
     for x in range(x0, x1 + 1):
         for y in range(y0, y1 + 1):
@@ -32,4 +34,3 @@ def build_obstacle_map():
     cells.discard(cfg.start)
     cells.discard(cfg.target)
     return cells
-
