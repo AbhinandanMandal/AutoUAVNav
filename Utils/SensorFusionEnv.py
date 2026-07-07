@@ -1,6 +1,5 @@
 
 
-
 """  
 A comprehensive class of UAV grid environment
 It returns the info of UAV and obstacle and how effective is the journey of UAV
@@ -13,8 +12,9 @@ Also it gaves two important information, whether any obstacle with camera input 
 """
 
 import math
-import math 
+import math
 import numpy as np
+
 
 class SensorFusionUAVGridEnv:
     ACTIONS = np.array([
@@ -224,7 +224,6 @@ class SensorFusionUAVGridEnv:
         return self._state(), float(reward), self.done, info
 
 
-
 class DualSensorFusionUAVGridEnv(SensorFusionUAVGridEnv):
     VALID_SENSORS = {"lidar", "camera", "imu"}
 
@@ -317,4 +316,3 @@ class IndividualSensorUAVGridEnv(SensorFusionUAVGridEnv):
         if self.has_sensor("camera") and camera_blocked:
             cost += self.cfg.camera_warning_energy_cost
         return float(cost)
-
