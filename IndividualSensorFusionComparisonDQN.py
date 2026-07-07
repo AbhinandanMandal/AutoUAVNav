@@ -71,9 +71,9 @@ print(env.action_size)
 
 # Sensor modes for sensor fusion
 SENSOR_MODES = {
-    "LiDAR + IMU": ("lidar", "imu"),
-    "Camera + IMU": ("camera", "imu"),
-    "LiDAR + Camera": ("lidar", "camera"),
+    "LiDAR": ("lidar"),
+    "Camera": ("camera"),
+    "IMU": ("imu"),
     "LiDAR + Camera + IMU": ("lidar", "camera", "imu"),
 }
 
