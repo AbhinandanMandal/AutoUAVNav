@@ -43,3 +43,8 @@ class Config:
     goal_energy_bonus: float = 25.0
     depleted_energy_penalty: float = -250.0
     energy_reward_scale: float = 0.60
+
+    # weight of the attention-entropy regularizer
+    attention_entropy_weight: float = 0.01
+    # "low" -> encourage sharp/focused attention
+    attention_entropy_target: str = "low"
