@@ -101,6 +101,3 @@ def behavior_clone(env, agent, path, epochs=200):
         agent.optimizer.step()
     agent.target_net.load_state_dict(agent.current_net.state_dict())
     return float(loss.item())
-
-
-
